@@ -29,6 +29,12 @@
   {% endfor %}
   {% if new_comment %}
     <h2>Your comment has been added.</h2>
+    <h2>Add another comment:</h2>
+    <form method="post">
+        {{ comment_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Add comment"></p>
+    </form>
   {% else %}
     <h2>Add a new comment</h2>
     <form method="post">
